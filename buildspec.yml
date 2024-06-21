@@ -1,9 +1,5 @@
 version: 0.2
 
-env:
-  exported-variables:
-    - K6_CLOUD_TOKEN
-
 phases:
   pre_build:
     commands:
@@ -12,7 +8,7 @@ phases:
   build:
     commands:
       - echo Run performance test
-      - docker run -i -e K6_CLOUD_TOKEN=glc_eyJvIjoiMTE1NTM3NCIsIm4iOiJjdXN0b21hZG1pbi1hd3MiLCJrIjoicDUyV2ZqQzJic2tVQ3U4OTJQOTk0Z0YzIiwibSI6eyJyIjoidXMifX0= grafana/k6 cloud - <scripts/cloud-test.js
+      - docker run -i grafana/k6 run - <scripts/cloud-test.js
   post_build:
     commands:
-      - echo Performance test complete - YAY!!!!!!
+      - echo Performance test complete - YAY!!!
