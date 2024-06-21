@@ -25,7 +25,7 @@ export default function () {
     var secret = '%2BB77BmpGkVAAOnRggYB4zX72R67N6HqZ';
     var apikey = "3_d4FvIWXawiU0op6cUZ-pBXY3TLqpjtS-i23mgqD0DwAaZFbvwLdoqMGnYYSmzlfN";
     var profile = ProfileMixer();
-    var r = http.get(encodeURI(`https://accounts.us1b.gigya.com/accounts.login?userKey=${userkey}&secret=${secret}&apikey=${apikey}&loginID=${profile.email}&password=${profile.password}&httpStatusCode=true`));
+    var r = http.get(encodeURI(`https://accounts.us1b.gigya.com/accounts.login?userKey=${userKey}&secret=${secret}&apikey=${apikey}&loginID=${profile.email}&password=${profile.password}&httpStatusCode=true`));
 
     check(r, {
         'errorCode is 0': (r) => JSON.parse(r.body).errorCode === 0
